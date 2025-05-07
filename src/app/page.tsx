@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { InfoItem } from "@/components/info-item";
-import { Smartphone, Cpu, Server, MemoryStick, Github, GitFork, FlaskConical, Sparkles, ToyBrick, HardDrive, Lock, Users, Settings, ListChecks, Wifi, Activity, ExternalLink, MessageSquareText, MonitorPlay } from "lucide-react";
+import { Smartphone, Cpu, Server, MemoryStick, Github, GitFork, FlaskConical, Sparkles, ToyBrick, HardDrive, Lock, Users, Settings, ListChecks, Wifi, Activity, ExternalLink, MessageSquareText, MonitorPlay, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -45,7 +45,7 @@ export default function HomePage() {
               <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 border border-border rounded-lg shadow-sm">
                   <h4 className="font-semibold text-accent flex items-center gap-2"><FlaskConical className="h-5 w-5" />Origin</h4>
-                  <p className="text-sm mt-1">
+                  <p className="text-sm mt-1 text-muted-foreground">
                     This project is the spiritual successor of the legendary J6+ OpenHouse, where we turned a literal potato phone into a functional Linux server. Now? We’ve leveled up to Sexynos heat-core madness.
                   </p>
                 </div>
@@ -92,7 +92,7 @@ export default function HomePage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 space-y-4">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-muted-foreground">
                 Since this server/lab is owned by @blueskychan-dev, it has also been added to her status website. You can check its live status here:
               </p>
               <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground focus:ring-accent transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
@@ -116,13 +116,13 @@ export default function HomePage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 space-y-4">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-muted-foreground">
                 Hi, I&apos;m blueskychan! I started this project because I wasn&apos;t using my Galaxy Note 9 much due to overheating issues, and I primarily use my Samsung Galaxy A23 5G as my main phone. 
               </p>
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-muted-foreground">
                 However, the Galaxy Note 9 is one of the devices capable of booting Linux smoothly with fewer problems. I&apos;ve attempted a similar project before with a Samsung Galaxy J6+ (Snapdragon 425). Unfortunately, that setup only supported unshare/chroot Linux deployments (I believe it was Ubuntu or Debian, I don&apos;t quite remember) and had many issues.
               </p>
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-muted-foreground">
                 I&apos;m hopeful this attempt will be much more successful! :3
               </p>
             </CardContent>
@@ -173,7 +173,7 @@ export default function HomePage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 space-y-4">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-muted-foreground">
                 This setup runs a well-modified kernel, optimized for performance and custom features on the Exynos 9810 platform.
               </p>
               <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground focus:ring-accent transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
@@ -197,15 +197,20 @@ export default function HomePage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 space-y-3">
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li className="flex items-center gap-2"><Settings className="h-5 w-5 text-accent flex-shrink-0" /> Optimize system performance (reduce idle RAM/CPU usage)</li>
-                <li className="flex items-center gap-2"><Cpu className="h-5 w-5 text-accent flex-shrink-0" /> Add KVM virtualization support</li>
-                <li className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent flex-shrink-0"><path d="M21.24 7.76a1.5 1.5 0 0 0-2.06-1.05L16.12 8a1.5 1.5 0 0 0-1.05 2.06l.2.67L13 11.24l-.61-.3A1.5 1.5 0 0 0 10.3 9.5l-1.95-.03a1.5 1.5 0 0 0-1.42 1.04l-1.5 4.5A1.5 1.5 0 0 0 6.8 17h.9a1.5 1.5 0 0 0 1.43-1.01l.03-.1 1.11-3.34.22.11c.3.14.63.2.95.2a1.5 1.5 0 0 0 1.12-.46l2.05-2.05.67.2a1.5 1.5 0 0 0 2.06-1.05l.76-2.28Z"/><path d="M13 11.24l-.5-2.5c-.24-1.24.83-2.3 2.07-2.06l2.5.5L13 11.24Z"/><path d="M5.18 11.23c-.24 1.24.83 2.3 2.07 2.06l2.05-.41-2.93-2.93c-1.4-1.4-1.4-3.68 0-5.08l.5-.5a3.6 3.6 0 0 1 5.08 0l3.39 3.39a3.6 3.6 0 0 1 0 5.08l-.5.5c-1.4 1.4-3.68 1.4-5.08 0l-2.05-2.05-.4.2Z"/></svg>
-                  Add Docker container support
+              <ul className="list-disc list-inside space-y-2">
+                <li className="flex items-center gap-2 text-muted-foreground"><Settings className="h-5 w-5 text-accent flex-shrink-0" /> Optimize system performance (reduce idle RAM/CPU usage)</li>
+                <li className="flex items-center gap-2 text-muted-foreground"><Cpu className="h-5 w-5 text-accent flex-shrink-0" /> Add KVM virtualization support</li>
+                <li className="flex items-start gap-2"> {/* Changed to items-start for better alignment */}
+                  <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" /> {/* Using CheckCircle2 for completed */}
+                  <div>
+                    <span className="text-foreground">Docker container support added</span>
+                    <p className="text-sm text-muted-foreground mt-0.5">
+                      (Only with Docker 19.03.15 due to Linux kernel 4.9; newer Docker versions require kernel 5.4+ due to pidfs)
+                    </p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2"><HardDrive className="h-5 w-5 text-accent flex-shrink-0" /> Expand storage to 128GB+ SSD</li>
-                <li className="flex items-center gap-2"><Lock className="h-5 w-5 text-accent flex-shrink-0" /> Harden for public guest access</li>
+                <li className="flex items-center gap-2 text-muted-foreground"><HardDrive className="h-5 w-5 text-accent flex-shrink-0" /> Expand storage to 128GB+ SSD</li>
+                <li className="flex items-center gap-2 text-muted-foreground"><Lock className="h-5 w-5 text-accent flex-shrink-0" /> Harden for public guest access</li>
               </ul>
             </CardContent>
           </Card>
@@ -223,7 +228,7 @@ export default function HomePage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 space-y-4">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-muted-foreground">
                 BrickerLab is a playful and experimental environment, similar in spirit to a Raspberry Pi setup. It&apos;s a space for tinkering, learning, and pushing the boundaries of what old hardware can do.
               </p>
               <div className="flex items-center gap-2 text-muted-foreground">
@@ -241,4 +246,3 @@ export default function HomePage() {
     </div>
   );
 }
-
