@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Purple Theme */
+    --background: 265 100% 97%; /* Very Pale Lavender White */
+    --foreground: 265 40% 10%; /* Deep Purple Text */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 265 40% 10%; /* Deep Purple Text */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 265 40% 10%; /* Deep Purple Text */
+    --primary: 275 70% 55%; /* Rich Violet */
+    --primary-foreground: 275 20% 98%; /* Almost White */
+    --secondary: 265 60% 90%; /* Light Lavender */
+    --secondary-foreground: 265 40% 20%; /* Dark Purple Text */
+    --muted: 265 60% 93%; /* Very Light Lavender */
+    --muted-foreground: 265 30% 45%; /* Medium Grayish Purple */
+    --accent: 290 75% 60%; /* Bright Magenta/Purple */
+    --accent-foreground: 290 20% 98%; /* Almost White */
+    --destructive: 0 84.2% 60.2%; /* Standard Destructive Red */
+    --destructive-foreground: 0 0% 98%; /* Light Foreground for Destructive */
+    --border: 265 40% 85%; /* Pale Lavender Gray Border */
+    --input: 265 40% 85%; /* Pale Lavender Gray Input */
+    --ring: 290 75% 60%; /* Bright Magenta/Purple (Accent) */
+    --chart-1: 275 65% 50%; /* Rich Violet */
+    --chart-2: 290 55% 45%; /* Magenta/Pinkish Purple */
+    --chart-3: 260 45% 40%; /* Cooler Indigo */
+    --chart-4: 310 60% 55%; /* Pink */
+    --chart-5: 240 55% 60%; /* Blueish Purple */
+    --radius: 0.5rem;
+
+    /* Sidebar Light Theme (Contrasting Dark Purple Sidebar) */
+    --sidebar-background: 265 50% 15%; /* Dark Purple */
+    --sidebar-foreground: 265 30% 90%; /* Light Lavender Text */
+    --sidebar-primary: 275 80% 70%; /* Bright Violet */
+    --sidebar-primary-foreground: 275 20% 98%; /* Almost White */
+    --sidebar-accent: 265 45% 25%; /* Medium Dark Purple for hover/active */
+    --sidebar-accent-foreground: 265 30% 95%; /* Lighter Lavender */
+    --sidebar-border: 265 40% 30%; /* Darker Purple Border for Sidebar */
+    --sidebar-ring: 290 80% 70%; /* Vivid Magenta/Purple */
+  }
+
+  .dark {
+    /* Dark Purple Theme */
+    --background: 265 45% 8%; /* Deep Indigo/Purple */
+    --foreground: 265 30% 92%; /* Pale Lavender */
+    --card: 265 40% 12%; /* Dark Slate Purple */
+    --card-foreground: 265 30% 92%; /* Pale Lavender */
+    --popover: 265 45% 5%; /* Very Deep Indigo */
+    --popover-foreground: 265 30% 92%; /* Pale Lavender */
+    --primary: 275 80% 65%; /* Bright Violet */
+    --primary-foreground: 275 20% 98%; /* Almost White */
+    --secondary: 265 35% 25%; /* Muted Indigo */
+    --secondary-foreground: 265 30% 88%; /* Light Lavender Gray */
+    --muted: 265 35% 20%; /* Dark Muted Indigo */
+    --muted-foreground: 265 25% 70%; /* Medium Lavender Gray */
+    --accent: 290 85% 70%; /* Vivid Magenta/Purple */
+    --accent-foreground: 290 20% 98%; /* Almost White */
+    --destructive: 0 70% 55%; /* Destructive Red (adjusted for dark) */
+    --destructive-foreground: 0 0% 98%; /* Light Foreground for Destructive */
+    --border: 265 30% 22%; /* Dark Grayish Purple */
+    --input: 265 30% 22%; /* Dark Grayish Purple */
+    --ring: 290 85% 70%; /* Vivid Magenta/Purple (Accent) */
+    --chart-1: 275 70% 60%; /* Primary Purple */
+    --chart-2: 290 60% 55%; /* Magenta/Pinkish Purple */
+    --chart-3: 260 50% 50%; /* Cooler Indigo */
+    --chart-4: 310 65% 65%; /* Pink */
+    --chart-5: 240 60% 70%; /* Blueish Purple */
+
+    /* Sidebar Dark Theme */
+    --sidebar-background: 265 50% 6%; /* Even Deeper Indigo */
+    --sidebar-foreground: 265 30% 85%; /* Soft Lavender */
+    --sidebar-primary: 275 80% 70%; /* Slightly Brighter Violet for sidebar emphasis */
+    --sidebar-primary-foreground: 275 20% 98%; /* Almost White */
+    --sidebar-accent: 265 40% 15%; /* Dark Purple for hover/active states */
+    --sidebar-accent-foreground: 265 30% 95%; /* Lighter Lavender */
+    --sidebar-border: 265 30% 18%; /* Darker Purple Border for Sidebar */
+    --sidebar-ring: 290 85% 70%; /* Vivid Magenta/Purple */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Removed explicit font-family to allow Tailwind and Geist font variables to take precedence */
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
