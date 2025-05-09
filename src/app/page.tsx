@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { InfoItem } from "@/components/info-item";
-import { Smartphone, Cpu, Server, MemoryStick, Github, GitFork, FlaskConical, Sparkles, ToyBrick, HardDrive, Lock, Users, Settings, ListChecks, Wifi, Activity, ExternalLink, MessageSquareText, MonitorPlay, CheckCircle2 } from "lucide-react";
+import { Smartphone, Cpu, Server, MemoryStick, Github, GitFork, FlaskConical, Sparkles, ToyBrick, HardDrive, Users, Settings, ListChecks, Wifi, Activity, ExternalLink, MessageSquareText, MonitorPlay, CheckCircle2, Usb } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -35,10 +35,11 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <InfoItem icon={<Cpu />} label="CPU" value="Samsung Exynos 9810 (8) @ 1.79GHz" />
                 <InfoItem icon={<MemoryStick />} label="RAM" value="6GB" />
-                <InfoItem icon={<HardDrive />} label="Boot Device" value="SanDisk SD Card 32GB (planned upgrade to 128GB SATA SSD via USB)" />
+                <InfoItem icon={<HardDrive />} label="Boot Device" value="UFS Chip 128GB (/data)" />
+                <InfoItem icon={<MemoryStick />} label="SD Card" value="SanDisk 32 GB" />
+                <InfoItem icon={<Usb />} label="USB Storage" value="SanDisk Flash Drive USB 3.0 128GB" />
                 <InfoItem icon={<Server />} label="Operating System" value="Void Linux AArch64" />
                 <InfoItem icon={<Wifi />} label="Network" value="WIFI 5GHz" />
-                <InfoItem icon={<Lock />} label="Access" value="Full root privileges" />
                 <InfoItem icon={<Users />} label="Status" value="Private use" />
               </div>
 
@@ -49,16 +50,23 @@ export default function HomePage() {
                     This project is the spiritual successor of the legendary J6+ OpenHouse, where we turned a literal potato phone into a functional Linux server. Now? We’ve leveled up to Sexynos heat-core madness.
                   </p>
                 </div>
-                <div className="p-4 border border-border rounded-lg shadow-sm">
+                <div className="p-4 border border-border rounded-lg shadow-sm space-y-2">
                    <h4 className="font-semibold text-accent flex items-center gap-2">
                     <MonitorPlay className="h-5 w-5" />
                     Live Tools
                     </h4>
-                  <Button asChild variant="link" className="p-0 h-auto text-accent hover:underline">
-                    <a href="https://node-self.mindhas403.dev" target="_blank" rel="noopener noreferrer">
-                       Monitor Usage API <ExternalLink className="inline-block ml-1 h-4 w-4" />
-                    </a>
-                  </Button>
+                  <p className="text-sm text-muted-foreground">
+                    <Link href="https://brickerlab.mindhas403.dev/dashboard" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                      Monitor Usage Dashboard
+                    </Link> - by <Link href="https://github.com/bluestar-b" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">@bluestar-b</Link>
+                    <ExternalLink className="inline-block ml-1 h-4 w-4 text-accent" />
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <Link href="https://brickerlab.mindhas403.dev/api" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                      Monitor Usage API
+                    </Link> - by <Link href="https://github.com/blueskychan-dev" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">@blueskychan-dev</Link>
+                    <ExternalLink className="inline-block ml-1 h-4 w-4 text-accent" />
+                  </p>
                 </div>
               </div>
               
@@ -70,7 +78,7 @@ export default function HomePage() {
                     layout="fill"
                     objectFit="cover"
                     className="transform group-hover:scale-105 transition-transform duration-500"
-                    data-ai-hint="server setup"
+                    data-ai-hint="server setup desk"
                   />
                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
                 </div>
@@ -145,7 +153,7 @@ export default function HomePage() {
                 {[
                   { user: "LONELY-WOLF", role: "Kernel hacking (To make this phone boot linux)" },
                   { user: "blueskychan-dev", role: "Maintainer" },
-                  { user: "bluestar-b", role: "Testing and do something fun!" },
+                  { user: "bluestar-b", role: "Testing, Docker support, and dashboard website" },
                   { user: "fufu-girl-meow", role: "Testing and do something fun!" },
                 ].map(credit => (
                   <li key={credit.user} className="flex flex-col sm:flex-row sm:items-center sm:gap-2 p-3 bg-card-foreground/5 border border-border rounded-md">
@@ -154,6 +162,32 @@ export default function HomePage() {
                       @{credit.user}
                     </Link>
                     <span className="text-sm text-muted-foreground sm:ml-auto_ sm:text-right_">{credit.role}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+
+        <Separator className="my-4" />
+
+        {/* Users Section */}
+        <section id="users" aria-labelledby="users-heading" className="animate-fadeIn animation-delay-200">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <CardHeader className="bg-card-foreground/5">
+              <CardTitle id="users-heading" className="flex items-center gap-3 text-xl md:text-2xl text-primary">
+                <Users className="h-7 w-7 text-accent" />
+                Lab Users
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6 space-y-3">
+              <ul className="list-none space-y-3">
+                {['blueskychan-dev', 'bluestar-b', 'fufu-girl-meow', 'kurtbahartr'].map(user => (
+                  <li key={user} className="flex items-center gap-2 p-3 bg-card-foreground/5 border border-border rounded-md">
+                    <Link href={`https://github.com/${user}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent hover:underline flex items-center gap-1">
+                      <Github className="h-4 w-4" />
+                      @{user}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -198,19 +232,32 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="p-6 space-y-3">
               <ul className="list-disc list-inside space-y-2">
-                <li className="flex items-center gap-2 text-muted-foreground"><Settings className="h-5 w-5 text-accent flex-shrink-0" /> Optimize system performance (reduce idle RAM/CPU usage)</li>
-                <li className="flex items-center gap-2 text-muted-foreground"><Cpu className="h-5 w-5 text-accent flex-shrink-0" /> Add KVM virtualization support</li>
-                <li className="flex items-start gap-2"> {/* Changed to items-start for better alignment */}
-                  <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" /> {/* Using CheckCircle2 for completed */}
+                <li className="flex items-center gap-2 text-muted-foreground">
+                  <Settings className="h-5 w-5 text-accent flex-shrink-0" /> 
+                  Optimize system performance (reduce idle RAM/CPU usage) (Kinda Complete)
+                </li>
+                <li className="flex items-start gap-2 text-muted-foreground">
+                  <Cpu className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-foreground">Docker container support added</span>
-                    <p className="text-sm text-muted-foreground mt-0.5">
-                      (Only with Docker 19.03.15 due to Linux kernel 4.9; newer Docker versions require kernel 5.4+ due to pidfs)
+                    Add KVM virtualization support
+                    <p className="text-sm text-muted-foreground/80 mt-0.5">
+                      (Very difficult due to no one successfully enabling KVM in the Exynos 9810 platform before, and the bootloader boots as EL1 and HYP is not available, requiring a lot of kernel hacking.)
                     </p>
                   </div>
                 </li>
-                <li className="flex items-center gap-2 text-muted-foreground"><HardDrive className="h-5 w-5 text-accent flex-shrink-0" /> Expand storage to 128GB+ SSD</li>
-                <li className="flex items-center gap-2 text-muted-foreground"><Lock className="h-5 w-5 text-accent flex-shrink-0" /> Harden for public guest access</li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-foreground">Docker container support added</span>
+                    <p className="text-sm text-muted-foreground/80 mt-0.5">
+                      (Thanks to <Link href="https://github.com/bluestar-b" target="_blank" rel="noopener noreferrer" className="font-semibold text-accent hover:underline">@bluestar-b</Link> for modifying the Docker script to make the latest Docker work)
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-center gap-2 text-foreground">
+                  <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" /> 
+                  Expand storage to 128GB+ SSD
+                </li>
               </ul>
             </CardContent>
           </Card>
@@ -246,3 +293,4 @@ export default function HomePage() {
     </div>
   );
 }
+
