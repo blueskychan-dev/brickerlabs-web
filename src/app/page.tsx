@@ -157,7 +157,6 @@ export default function HomePage() {
                   { user: "LONELY-WOLF", role: "Kernel hacking (To make this phone boot linux)" },
                   { user: "blueskychan-dev", role: "Maintainer" },
                   { user: "bluestar-b", role: "Testing, Docker support, and dashboard website" },
-                  { user: "fufu-girl-meow", role: "Testing and do something fun!" },
                 ].map(credit => (
                   <li key={credit.user} className="flex flex-col sm:flex-row sm:items-center sm:gap-2 p-3 bg-card-foreground/5 border border-border rounded-md">
                     <Link href={`https://github.com/${credit.user}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent hover:underline flex items-center gap-1">
@@ -235,9 +234,12 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="p-6 space-y-3">
               <ul className="list-disc list-inside space-y-2">
-                <li className="flex items-center gap-2 text-muted-foreground">
-                  <Settings className="h-5 w-5 text-accent flex-shrink-0" /> 
-                  Optimize system performance (reduce idle RAM/CPU usage) (Kinda Complete)
+                <li className="flex items-start gap-2">
+                  <Settings className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" /> 
+                  <div>
+                    <span className="text-foreground">Optimize system performance (reduce idle RAM/CPU usage) (Kinda Complete)</span>
+                    <p className="text-sm text-muted-foreground/80 mt-0.5">Keep going!</p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-2 text-muted-foreground">
                   <Cpu className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
