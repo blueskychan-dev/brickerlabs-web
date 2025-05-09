@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { InfoItem } from "@/components/info-item";
-import { Smartphone, Cpu, Server, MemoryStick, Github, GitFork, FlaskConical, Sparkles, ToyBrick, HardDrive, Users, Settings, ListChecks, Wifi, Activity, ExternalLink, MessageSquareText, MonitorPlay, CheckCircle2, Usb } from "lucide-react";
+import { Smartphone, Cpu, Server, MemoryStick, Github, GitFork, FlaskConical, Sparkles, ToyBrick, HardDrive, Users, Settings, ListChecks, Wifi, Activity, ExternalLink, MessageSquareText, MonitorPlay, CheckCircle2, Usb, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -108,6 +108,9 @@ export default function HomePage() {
                   <ExternalLink className="mr-2 h-5 w-5" /> status.mindhas403.dev
                 </a>
               </Button>
+              <p className="leading-relaxed text-muted-foreground">
+                Or alternatively, use <Link href="https://github.com/bluestar-b" target="_blank" rel="noopener noreferrer" className="font-semibold text-accent hover:underline">@bluestar-b</Link>&apos;s dashboard: <Link href="https://brickerlab.mindhas403.dev/dashboard" target="_blank" rel="noopener noreferrer" className="font-semibold text-accent hover:underline">https://brickerlab.mindhas403.dev/dashboard</Link>
+              </p>
             </CardContent>
           </Card>
         </section>
